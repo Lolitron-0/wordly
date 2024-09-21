@@ -8,6 +8,12 @@ add_compile_options(-Wall)
 
 include_directories(include)
 
-set(SOURCES src/Dictionary.cpp src/Wordly.cpp src/main.cpp)
+set(SOURCES src/Dictionary.cpp src/Wordly.cpp src/UIHelper.cpp src/main.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
+
+add_subdirectory(thirdparty/cxxopts)
+target_link_libraries(${PROJECT_NAME} PRIVATE cxxopts)
+
+# for header only
+target_include_directories(${PROJECT_NAME} PRIVATE thirdparty)
