@@ -5,14 +5,15 @@
 
 namespace wordly {
 
-NoSuchDictFile::NoSuchDictFile()
-    : std::runtime_error{ "No such dictionary file" } {
+NoSuchDictFile::NoSuchDictFile(const std::string& path)
+    : std::runtime_error{ std::format("Dictionary file {} not found",
+                                      path) } {
 }
 
 Dictionary::Dictionary(const std::string& filePath) {
   std::ifstream file{ filePath };
   if (!file.is_open()) {
-    throw NoSuchDictFile{};
+    throw NoSuchDictFile{ filePath };
   }
 
   std::ostringstream stream;

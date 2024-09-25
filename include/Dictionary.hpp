@@ -9,7 +9,7 @@ namespace wordly {
 
 class NoSuchDictFile : public std::runtime_error {
 public:
-  NoSuchDictFile();
+  NoSuchDictFile(const std::string& path);
 };
 
 class Dictionary {

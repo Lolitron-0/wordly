@@ -12,4 +12,6 @@ PackConstructorInitializers: Never
 Cpp11BracedListStyle: false
 AllowShortLambdasOnASingleLine: None
 AllowShortFunctionsOnASingleLine: None
+AllowShortEnumsOnASingleLine: false
 PenaltyReturnTypeOnItsOwnLine: 1000000
+

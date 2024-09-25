@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -u
+set -eu
 
 mkdir -p build 
 
@@ -16,5 +16,5 @@ cp -f build/compile_commands.json .
 
 if [ $1 == "run" ]; then
 	echo -e "\n"
-	./build/wordly
+	./build/wordly -n 3
 fi

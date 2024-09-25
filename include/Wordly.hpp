@@ -1,23 +1,17 @@
 #pragma once
+#include "CheckResult.hpp"
 #include "Dictionary.hpp"
+#include "SessionOptions.hpp"
+#include "UIHelper.hpp"
 #include <iostream>
 #include <ranges>
 #include <unordered_map>
 
 namespace wordly {
 
-enum class LetterResult {
-	Undefined=-1,
-	NoSuch,
-	Misplaced,
-	Correct
-};
-
 class Wordly {
 public:
-	using CheckResult = std::vector<LetterResult>;
-
-  explicit Wordly(Dictionary dict);
+  explicit Wordly(const SessionOptions& opts);
 
   void resetGameState();
 
@@ -25,11 +19,14 @@ public:
 
 private:
   auto check(const std::string& attempt) const -> CheckResult;
+  auto checkWin(const CheckResult& res) -> bool;
 
-  Dictionary m_Dict;
+  UIHelper m_UIHelper;
+  std::shared_ptr<Dictionary> m_Dict;
   std::string m_TargetWord;
   std::unordered_map<char, int> m_TargetWordMap;
-  int m_TriesCount{ 0 };
+  std::size_t m_AttemptsLeft;
+  std::size_t m_MaxAttempts;
 };
 
 } // namespace wordly
