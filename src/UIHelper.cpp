@@ -4,7 +4,10 @@
 #include <ranges>
 #include <sstream>
 #define OOF_IMPL
+#pragma GCC diagnostic push 
+#pragma GCC diagnostic ignored "-Wall"
 #include <oof/oof.h>
+#pragma GCC diagnostic pop
 
 namespace wordly {
 
