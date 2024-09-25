@@ -16,5 +16,5 @@ cp -f build/compile_commands.json .
 
 if [ $# -ne 0 ] && [ "$1" == "run" ]; then
 	echo -e "\n"
-	./build/wordly -n 3
+	./build/wordly -n 10
 fi
