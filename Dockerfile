@@ -6,4 +6,4 @@ COPY . .
 
 RUN ./dev.sh
 
-CMD ./dev.sh run
+CMD ./build/wordly -n10
