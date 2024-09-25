@@ -1,5 +1,5 @@
 # wordly
-Wordly game. \
+Wordly game. 
 - `./docker-run.sh` to run game in docker. 
 - Builded files are mounted to host and located in `docker-build/`. \
 \
