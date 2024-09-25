@@ -24,7 +24,9 @@ void Wordly::startGameLoop() {
     m_UIHelper.clearScreen();
 
     m_UIHelper.printAttemptHistory();
+#ifndef NDEBUG
     std::cout << "> " << m_TargetWord << std::endl;
+#endif
     auto attempt{ m_UIHelper.inputString(m_TargetWord.size()) };
     auto checkResult{ check(attempt) };
     m_AttemptsLeft--;

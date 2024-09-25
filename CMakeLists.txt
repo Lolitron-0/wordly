@@ -17,3 +17,5 @@ target_link_libraries(${PROJECT_NAME} PRIVATE cxxopts)
 
 # for header only
 target_include_directories(${PROJECT_NAME} PRIVATE thirdparty)
+
+target_link_options(${PROJECT_NAME} PRIVATE -static-libgcc -static-libstdc++ -static)
